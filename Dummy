@@ -1,32 +1,13 @@
-<form:form method="post" modelAttribute="medicine" action="insert">
-		<table class="home">
-			<tr>
-				<td><form:label path="name">Name</form:label></td>
-				<td><form:input type="text" path="id"
-						placeholder="Enter Medicine Name" required="required" /></td>
-			</tr>
-
-			<tr>
-				<td><form:label path="manufactureDate">Manufacture Date</form:label></td>
-				<td><form:input type="date" path="manufactureDate"
-						placeholder="mm/dd/yyyy" required="required" /></td>
-			</tr>
-
-			<tr>
-				<td><form:label path="expDate">Expire Date</form:label></td>
-				<td><form:input type="date" path="expDate"
-						placeholder="mm/dd/yyyy" required="required" /></td>
-			</tr>
-
-			<tr>
-				<td><form:label path="use">Uses</form:label></td>
-				<td><form:input type="text" path="use"
-						placeholder="usefor" required="required" /></td>
-			</tr>
-
-			<tr>
-				<td><button type = "submit">Submit</button></td>
-			</tr>
-		</table>
-
-	</form:form>
+@PostMapping(value = "/insert")
+	public String insert(@ModelAttribute("medicine") Medicine medicine,Model model) {
+		
+		if(medicineService.insert(medicine)) {
+			model.addAttribute("msg" , "Success");
+		}
+		else {
+			model.addAttribute("msg" , "Fail to insert");
+		}
+		
+		return "home";
+		
+	}
