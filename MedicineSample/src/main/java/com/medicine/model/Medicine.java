@@ -1,12 +1,10 @@
 package com.medicine.model;
 
-import java.util.Date;
-
 public class Medicine {
 
 	private String name;
-	private Date manufactureDate;
-	private Date expDate;
+	private String manufactureDate;
+	private String expDate;
 	private String use;
 
 	public String getName() {
@@ -17,19 +15,19 @@ public class Medicine {
 		this.name = name;
 	}
 
-	public Date getManufactureDate() {
+	public String getManufactureDate() {
 		return manufactureDate;
 	}
 
-	public void setManufactureDate(Date manufactureDate) {
+	public void setManufactureDate(String manufactureDate) {
 		this.manufactureDate = manufactureDate;
 	}
 
-	public Date getExpDate() {
+	public String getExpDate() {
 		return expDate;
 	}
 
-	public void setExpDate(Date expDate) {
+	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
 

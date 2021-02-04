@@ -1,5 +1,12 @@
 package com.medicine.dao;
 
-public class MedicineDAO {
+import java.util.List;
 
+import com.medicine.model.Medicine;
+
+public interface MedicineDAO {
+	
+	List<Medicine>  insertDetails(Medicine medicine); 
+	List<Medicine>  deleteDetails(Medicine medicine); 
+	List<Medicine>  fetchDetails();
 }
