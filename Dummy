@@ -23,20 +23,44 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Home</title>
 <script>
-	function show() {
-		document.getElementById("data").style.display = "block";
+	function show1() {
+		document.getElementById("tb1").style.display = "block";
+		document.getElementById("tb2").style.display = "none";
+		document.getElementById("tb3").style.display = "none";
+
+	}
+	function show2() {
+		document.getElementById("tb2").style.display = "block";
+		document.getElementById("tb1").style.display = "none";
+		document.getElementById("tb3").style.display = "none";
+
+		location.href = '/fetch';
+
+	}
+	function show3() {
+		document.getElementById("tb3").style.display = "block";
+		document.getElementById("tb1").style.display = "none";
+		document.getElementById("tb2").style.display = "none";
 
 	}
 </script>
 </head>
 <body>
-	<button onclick="show()">
-		<a href="/fetch">Show</a>
-	</button>
 
+	<div class="dropdown">
+		<a class="btn btn-primary dropdown-toggle" href="#" role="button"
+			id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+			aria-expanded="false"> Click </a>
+
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#tb1" onclick=" show1()">Insert</a> <a
+				class="dropdown-item" href="#tb2" onclick="show2()">Fetch</a> <a
+				class="dropdown-item" href="#tb3" onclick="show3()">Delete</a>
+		</div>
+	</div>
 
 	<form:form method="post" modelAttribute="medicine" action="insert">
-		<table>
+		<table id="tb1" style="display: none">
 			<tr>
 				<td><form:label path="name">Name</form:label></td>
 				<td><form:input type="text" path="name"
@@ -72,7 +96,7 @@
 
 
 
-	<table id="data">
+	<table id="tb2" style="display: none">
 		<tr>
 			<th>SNO</th>
 			<th>Name</th>
@@ -98,8 +122,8 @@
 		</c:forEach>
 	</table>
 
-	<h1>Delete Medicine</h1>
-	<div>
+	<div id="tb3" style="display: none">
+		<h1>Delete Medicine</h1>
 		<form action="delete" method="post">
 			<label>Expire Date :</label><input type="date" name="date">
 			<button type="submit">Delete</button>
