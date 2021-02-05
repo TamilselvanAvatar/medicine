@@ -17,4 +17,18 @@ public class MedicineService {
 		return medicineDAO.fetchDetails();
 	}
 
+	public boolean insert(Medicine medicine) {
+		if(medicineDAO.insertDetails(medicine) == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean delete(String date) {
+		if(medicineDAO.deleteDetails(date) >= 1) {
+			return true;
+		}
+		return false;
+	}
+
 }

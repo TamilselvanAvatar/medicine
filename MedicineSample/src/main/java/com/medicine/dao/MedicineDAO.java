@@ -6,7 +6,7 @@ import com.medicine.model.Medicine;
 
 public interface MedicineDAO {
 	
-	List<Medicine>  insertDetails(Medicine medicine); 
-	List<Medicine>  deleteDetails(Medicine medicine); 
+	int  insertDetails(Medicine medicine); 
+	int  deleteDetails(String date); 
 	List<Medicine>  fetchDetails();
 }
