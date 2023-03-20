@@ -1,19 +1,15 @@
-create database pharma;
+create database if not exists pharma ;
 
 use pharma ;
 
-create table medicine(
-
-id int ,
-name varchar(10),
-man_date date,
-exp_date date,
-uses varchar(10),
-
-Primary Key(id)
-
+create table if not exists medicine(
+    id int ,
+    name varchar(10),
+    man_date date,
+    exp_date date,
+    uses varchar(10),
+    Primary Key(id)
 );
-
 
 insert into medicine value(1,"Crocin","2009-02-01","2010-01-09","headache" );
 insert into medicine value(2,"Aspirin","2019-02-01","2020-11-04","fever" );
